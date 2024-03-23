@@ -79,7 +79,21 @@ links <- links[10:225]
 links[1:10]
 str_c("https://www.nzz.ch", links)
 
+
+#1. Create an empty container to place the results
+articles <- vector(mode = "list", length = length(links))
+
+#2. Build the body of the for loop
+
+#3. I loop over the iterator "i"
+
+for (i in 1:length(links)) {
+  cat("iteration:", i, "\n")
+  articles[[i]] <- read_html(links[i]) %>% 
+    html_elements(css = "p") %>% 
+    html_text()
+  Sys.sleep(runif(n = 1, min = 0.2, max = 0.4))
+}
+
 #I got the links, now I want to scrape each page:
-article <- read_html(links[105]) %>% 
-  html_elements(css = "p") %>% 
-  html_text()
+
