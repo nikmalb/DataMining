@@ -97,3 +97,6 @@ for (i in 1:length(links)) {
 
 #I got the links, now I want to scrape each page:
 
+
+CE1 <- read.csv("C:/Users/Nina/Documents/WiLu/Master/FS24/Data Mining for Political and Social Sciences using R/CE1/1000 companies list and rating.csv")
+View(CE1)
